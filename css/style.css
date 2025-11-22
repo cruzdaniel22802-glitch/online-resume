@@ -1,0 +1,445 @@
+/* ===== GOOGLE FONTS IMPORT ===== */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+/* ===== CSS VARIABLES ===== */
+:root {
+  --navy:       #1e2547;
+  --navy-light: #292f56;
+  --accent:     #4f7ef8;
+  --accent-soft:#e8effe;
+  --green:      #acfa70;
+  --text-dark:  #1a1d2e;
+  --text-mid:   #4a4f6a;
+  --text-light: #8a90b0;
+  --bg-card:    rgba(255, 255, 255, 0.96);
+  --border:     rgba(79, 126, 248, 0.12);
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  18px;
+  --shadow-card:0 4px 24px rgba(30, 37, 71, 0.08);
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== GLOBAL RESET & BASE ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(180deg, #1e2547, #acfa70);
+  color: var(--text-dark);
+  margin: 0;
+  padding-top: 68px;
+  line-height: 1.7;
+  font-size: 15.5px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== SCROLL ANCHOR OFFSET ===== */
+[id] {
+  scroll-margin-top: 80px;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+  max-width: 860px;
+  margin: 2.5rem auto 4rem;
+  background: var(--bg-card);
+  backdrop-filter: blur(8px);
+  padding: 3rem 3.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
+}
+
+/* ===== HEADER ===== */
+header {
+  background: transparent;
+  color: #fff;
+  text-align: center;
+  padding: 3.5rem 1rem 2rem;
+  margin-bottom: 0;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin: 0 0 0.4rem;
+}
+
+header p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* ===== TEXT SHADOW FOR HEADER + FOOTER ===== */
+header h1,
+header p,
+footer p {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== HEADER INITIAL STATE (fade-in via JS) ===== */
+header h1,
+header p {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 1.4s ease-out, transform 1.4s ease-out;
+}
+
+/* ===== FADE-IN CLASS ===== */
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* ===== SHINY GRADIENT TEXT FOR HEADER ===== */
+header h1,
+header p {
+  background: linear-gradient(
+    110deg,
+    rgba(255, 255, 255, 0.45) 20%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0.45) 80%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shine 7s linear infinite;
+}
+
+@keyframes shine {
+  0%   { background-position: 220% 0; }
+  100% { background-position: -220% 0; }
+}
+
+/* ===== SECTION DIVIDERS ===== */
+section {
+  padding-bottom: 0.5rem;
+}
+
+section + section {
+  border-top: 1px solid rgba(30, 37, 71, 0.07);
+  padding-top: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+/* ===== HEADINGS ===== */
+h2 {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: none;
+  padding-left: 0;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 0 0 0.5rem;
+}
+
+/* ===== BODY TEXT ===== */
+p {
+  color: var(--text-mid);
+  margin: 0 0 1rem;
+  line-height: 1.8;
+}
+
+/* ===== SKILLS LIST — tag-style layout ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skills-grid li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.skills-grid li b {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.skills-grid li span {
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
+/* ===== EXPERIENCE: PROJECT CARDS ===== */
+.project {
+  background: #f8f9fe;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  transition: box-shadow var(--transition);
+}
+
+.project:hover {
+  box-shadow: 0 4px 16px rgba(79, 126, 248, 0.1);
+}
+
+.project h3 {
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+}
+
+.project ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style: none;
+}
+
+.project ul li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--text-mid);
+  font-size: 0.925rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.65;
+}
+
+.project ul li::before {
+  content: "→";
+  position: absolute;
+  left: -0.1rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  top: 0.05em;
+}
+
+/* ===== EDUCATION BLOCK ===== */
+.edu-block {
+  background: #f8f9fe;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.edu-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.edu-block p {
+  margin: 0;
+  color: var(--text-mid);
+  font-size: 0.925rem;
+  line-height: 1.5;
+}
+
+.edu-block b {
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ===== GENERAL UL FALLBACK (profile section) ===== */
+ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  padding: 0;
+}
+
+/* ===== DATE ===== */
+.date {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  font-family: "DM Mono", monospace;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.65);
+  padding: 1.25rem 1rem;
+  margin-top: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ===== GENERAL LINKS ===== */
+a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* ===== TOP NAV BAR ===== */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(20, 25, 55, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.75rem;
+  height: 64px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.topbar .name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.nav-center {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.nav-center a {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+}
+
+.nav-center a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-right a {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  transition: all var(--transition);
+}
+
+.nav-right a:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-1px);
+}
+
+/* ===== MOBILE LARGE ===== */
+@media (max-width: 900px) {
+  .topbar {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .nav-left,
+  .nav-center,
+  .nav-right {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-right {
+    flex-wrap: wrap;
+  }
+
+  body {
+    padding-top: 110px;
+  }
+
+  .container {
+    margin: 1rem;
+    padding: 2rem 1.5rem;
+    max-width: calc(100% - 2rem);
+  }
+
+  header {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== MOBILE SMALL ===== */
+@media (max-width: 600px) {
+  body {
+    padding-top: 130px;
+  }
+
+  .nav-center a,
+  .nav-right a {
+    font-size: 0.82rem;
+    margin: 0.2rem;
+    padding: 0.3rem 0.55rem;
+  }
+
+  .container {
+    padding: 1.5rem 1.1rem;
+    margin: 0.75rem;
+    max-width: calc(100% - 1.5rem);
+  }
+
+  header h1 {
+    font-size: 1.9rem;
+  }
+
+  .project {
+    padding: 1rem 1.1rem;
+  }
+}

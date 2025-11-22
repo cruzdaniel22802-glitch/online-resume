@@ -4,70 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daniel Cruz | Computer Science Student</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <nav class="topbar">
       <div class="nav-left">
         <a href="#" class="name">Daniel Cruz</a>
       </div>
-
       <div class="nav-center">
         <a href="#profile">Profile</a>
         <a href="#skills">Technical Skills</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
       </div>
-
       <div class="nav-right">
-        <a href="DanielCruz_resume.pdf" target="_blank">📄 Résumé</a>
-        <a href="https://github.com/cruzdaniel22802-glitch" target="_blank"
-          >GitHub</a
-        >
-        <a
-          href="https://www.linkedin.com/in/daniel-cruz-8b1969389/"
-          target="_blank"
-          >LinkedIn</a
-        >
+        <a href="assets/DanielCruz_resume.pdf" target="_blank">📄 Résumé</a>
+        <a href="https://github.com/cruzdaniel22802-glitch" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/daniel-cruz-8b1969389/" target="_blank">LinkedIn</a>
       </div>
     </nav>
+
     <header>
       <h1 id="profile">Daniel Cruz</h1>
-      <p>Computer Science Student</p>
+      <p id="titleText">Computer Science Student</p>
     </header>
+
     <div class="container">
+
       <section>
-        <h2 id="skills">Profile</h2>
+        <h2>Profile</h2>
         <p>
-          Motivated Computer Science student with hands-on experience gained
-          through academic projects, coding tutorials, and self-initiated
-          projects. I'm passionate about learning new tools and improving my
-          technical and creative skills in order come up with more original
-          solutions. Through my coursework and personal projects, I have built
-          several small applications that demonstrate my understanding of
-          programming concepts, and problem solving.
+          Computer Science student with hands-on experience building dynamic
+          web applications using Java, Servlets, and server-side technologies.
+          Passionate about backend development and web application architecture,
+          with a strong foundation in object-oriented programming and
+          database-driven design. Experienced in structuring projects with
+          industry-standard tools such as Apache Tomcat, Maven, and MySQL,
+          and comfortable working across the full request–response lifecycle.
+          Driven to write clean, purposeful code and continuously expand a
+          technical skill set through both coursework and self-directed projects.
         </p>
       </section>
 
       <section>
-        <h2>Technical Skills</h2>
-        <ul>
-          <li><b>Languages:</b> Java, HTML, CSS</li>
+        <h2 id="skills">Technical Skills &amp; Tools</h2>
+        <ul class="skills-grid">
           <li>
-            <b>Development Tools & IDEs:</b> IntelliJ IDEA, Eclipse, Visual
-            Studio Code, FileZilla
+            <b>Programming Languages</b>
+            <span>Java (Core &amp; OOP), HTML5, CSS3</span>
           </li>
           <li>
-            <b>Operating Systems:</b> Windows, Linux (basic experience through
-            VirtualBox)
+            <b>Web Technologies</b>
+            <span>Java Servlets, JSP, JavaScript (fundamentals)</span>
           </li>
           <li>
-            <b>Cybersecurity Tools:</b> Familiar with basic Linux-based tools
-            and environments used for security learning
+            <b>Backend &amp; Server</b>
+            <span>Apache Tomcat, Servlet API, HTTP request/response, Maven (pom.xml)</span>
+          </li>
+          <li>
+            <b>Databases</b>
+            <span>MySQL — schema design, CRUD operations, JDBC connectivity</span>
+          </li>
+          <li>
+            <b>Tools &amp; Environments</b>
+            <span>IntelliJ IDEA, Eclipse, VS Code, FileZilla, VirtualBox (Linux), Git</span>
           </li>
           <li id="experience">
-            <b>Areas of Interest:</b> Software development, web technologies,
-            cybersecurity, and systems administration
+            <b>Areas of Interest</b>
+            <span>Backend development, web architecture, cybersecurity, systems administration</span>
           </li>
         </ul>
       </section>
@@ -76,48 +80,52 @@
         <h2>Experience</h2>
 
         <div class="project">
-          <h3>Course Projects - Southwestern College</h3>
+          <h3>Java Servlet Web Application — Independent Project</h3>
           <ul>
-            <li>
-              Developed small Java applications focusing on object-oriented
-              programming, algorithms, and data structures.
-            </li>
-            <li>
-              Created console-based programs and mini projects demonstrating
-              file handling, arrays, and user interaction.
-            </li>
-            <li>
-              Used IntelliJ IDEA, Eclipse, and VS Code to build and debug code
-              across different programming environments.
-            </li>
+            <li>Built a dynamic web application using Java Servlets deployed on Apache Tomcat, handling real HTTP GET and POST requests.</li>
+            <li>Implemented full CRUD operations (Create, Read, Update, Delete) connected to a MySQL database via JDBC.</li>
+            <li>Designed backend routing and business logic to process user input and generate server-rendered responses.</li>
+            <li>Structured the project using Maven (pom.xml) for dependency management and consistent build configuration.</li>
+            <li>Organized code following an MVC-inspired separation of concerns, keeping presentation, logic, and data access layers distinct.</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <h3>Course Projects — Southwestern College</h3>
+          <ul>
+            <li>Developed Java applications applying object-oriented principles, data structures, and algorithmic problem-solving across multiple assignments.</li>
+            <li>Implemented console-based programs demonstrating file I/O, array manipulation, and user input handling.</li>
+            <li>Utilized IntelliJ IDEA, Eclipse, and VS Code to write, test, and debug code across diverse development environments.</li>
           </ul>
         </div>
 
         <div class="project">
           <h3>Independent Learning Projects</h3>
           <ul>
-            <li>
-              Enhanced tutorial-based coding projects in Java to add new
-              features and improve usability.
-            </li>
-            <li>
-              Explored additional programming languages such as Python,
-              JavaScript, and go.
-            </li>
+            <li>Extended tutorial-based Java projects by adding new features, refactoring code, and improving overall usability.</li>
+            <li>Explored additional languages including Python, JavaScript, and Go to broaden understanding of different programming paradigms.</li>
+            <li>Built and deployed static web pages using HTML and CSS, reinforcing front-end fundamentals alongside backend coursework.</li>
           </ul>
         </div>
       </section>
 
       <section>
         <h2 id="education">Education</h2>
-        <p>
-          <b>Associate Degree for Transfer, Computer Science</b
-          ><br />Southwestern College
-        </p>
+        <div class="edu-block">
+          <div class="edu-icon">🎓</div>
+          <p>
+            <b>Associate Degree for Transfer, Computer Science</b><br />
+            Southwestern College
+          </p>
+        </div>
       </section>
+
     </div>
+
     <footer>
-      <p>© 2025 Daniel Cruz | Made with ❤️ and GitHub Pages</p>
+      <p>© 2025 Daniel Cruz &nbsp;·&nbsp; Made with ❤️ and GitHub Pages</p>
     </footer>
+
+    <script src="js/typewriter.js"></script>
   </body>
 </html>
